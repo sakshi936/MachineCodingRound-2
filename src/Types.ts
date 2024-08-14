@@ -40,3 +40,9 @@ export type UserData = {
 		};
 	};
 };
+
+export type joke = {
+	data: {
+		content: string;
+	};
+};
