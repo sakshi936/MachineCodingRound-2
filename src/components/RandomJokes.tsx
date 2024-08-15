@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { joke } from "../Types";
 
 function RandomJokes() {
 	const [Jokedata, setJokeData] = useState<joke | null>(null);
+
 	async function GetJokesFromAPI() {
 		const response = await fetch("https://api.freeapi.app/api/v1/public/randomjokes/joke/random");
 		const data = await response.json();
