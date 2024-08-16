@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { joke } from "../Types";
+import { Link } from "react-router-dom";
 
 function RandomJokes() {
 	const [Jokedata, setJokeData] = useState<joke | null>(null);
@@ -21,6 +22,14 @@ function RandomJokes() {
 
 	return (
 		<div className="bg-[url('/Random-Jokes/bg.png')]  w-full h-screen flex  flex-col justify-center items-center px-6">
+			<div className="text-white font-bold w-full flex justify-between ">
+				<Link to={"/random-user"} className=" flex justify-items-end  bg-blue-500 p-3 rounded-xl">
+					&lt;- Random User
+				</Link>
+				<Link to={"/cats-listing"} className=" flex justify-items-end  bg-blue-500 p-3 rounded-xl">
+					Cat Listing -&gt;
+				</Link>
+			</div>
 			{/* twitter post section */}
 			<section className="bg-black w-1/2 h-fit p-5 rounded-2xl">
 				{/* top */}
@@ -70,7 +79,7 @@ function RandomJokes() {
 				</div>
 				<p className="text-center mt-3 text-[#707072] font-semibold">© chai aur code</p>
 			</section>
-			<footer className="w-full relative top-10 flex justify-end">
+			<footer className="w-full relative top-6 flex justify-end">
 				<a href="https://chaicode.com/" target="_blank">
 					<img src="/Random-User/chai.png" alt="chai" width={60} height={60} />
 				</a>

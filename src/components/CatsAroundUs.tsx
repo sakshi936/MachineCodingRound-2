@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CatsDetails } from "../Types";
+import { Link } from "react-router-dom";
 
 function CatsAroundUs() {
 	const [catData, setCatData] = useState<CatsDetails | null>(null);
@@ -22,8 +23,13 @@ function CatsAroundUs() {
 	};
 
 	return (
-		<div className="bg-[url('/CatsAroundUs/bg.svg')] w-full h-full bg-[#828080] py-16 px-6">
-			<div className="text-3xl font-bold ml-4 flex  justify-between">
+		<div className="bg-[url('/CatsAroundUs/bg.svg')] w-full h-full bg-[#828080] py-6 px-6">
+			<div className="text-white font-bold w-full flex justify-between">
+				<Link to={"/random-jokes"} className=" flex justify-items-end bg-blue-500 p-3 rounded-xl">
+					&lt;- Random Jokes
+				</Link>
+			</div>
+			<div className="text-3xl font-bold ml-4 flex  justify-between  mt-8">
 				<h1>Cats Around Us</h1>
 				<img src="/Random-User/chai.png" alt="chai" width={60} height={60} />
 			</div>

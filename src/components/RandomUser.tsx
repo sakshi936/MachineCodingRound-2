@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { UserData } from "../Types";
+import { Link } from "react-router-dom";
 
 function RandomUser() {
 	const [Userdata, setData] = useState<UserData | null>(null);
@@ -27,8 +28,13 @@ function RandomUser() {
 	}
 
 	return (
-		<div className="bg-[url('/Random-User/bg1.svg')] object-cover w-full h-full  py-8 flex justify-center items-center text-black">
+		<div className="bg-[url('/Random-User/bg1.svg')] object-cover w-full h-full  py-8 flex flex-col  justify-center items-center text-black px-4">
 			{/*  profile card */}
+			<div className="text-white font-bold w-full flex justify-end ">
+				<Link to={"/random-jokes"} className=" flex justify-items-end  bg-blue-500 p-3 rounded-xl">
+					Random Jokes -&gt;
+				</Link>
+			</div>
 			<div className="w-[360px] h-[610px] bg-[#B6B3F3] rounded-3xl border-[8px] border-white p-4 flex flex-col justify-between">
 				{!Userdata ? (
 					"Downloading..."
